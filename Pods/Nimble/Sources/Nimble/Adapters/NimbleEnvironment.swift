@@ -2,7 +2,7 @@ import Dispatch
 import Foundation
 
 /// "Global" state of Nimble is stored here. Only DSL functions should access / be aware of this
-/// class' existance
+/// class' existence
 internal class NimbleEnvironment {
     static var activeInstance: NimbleEnvironment {
         get {
@@ -26,6 +26,7 @@ internal class NimbleEnvironment {
         set { NimbleAssertionHandler = newValue }
     }
 
+    var suppressTVOSAssertionWarning: Bool = false
     var awaiter: Awaiter
 
     init() {
